@@ -4,8 +4,8 @@ class Painting extends Component{
       this.type = type;
       this.ySpeed = 30;
       this.gravity = 0.3;
-      /* this.img = new Image()
-      this.img.src = "player.png" */
+      /* this.img = new Image();
+      this.img.src = "./../img/player.png"; */
       
     }
     moveLeft() {

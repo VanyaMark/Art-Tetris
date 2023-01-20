@@ -1,66 +1,4 @@
-const myGameArea = {
-    canvas: document.createElement("canvas"),
-    components: [],
-    isGameOver: false,
-    start: function () {
-        this.canvas.width = 750;
-        this.canvas.height = 1200;
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-    },
-    update: function() {
 
-       /* const ctx = myGameArea.context
-
-        // render the background
-        ctx.drawImage(background.img, background.x, background.y, myGameArea.canvas.width, myGameArea.canvas.height)
-        ctx.drawImage(background.img, background.x + background.w , background.y, myGameArea.canvas.width, myGameArea.canvas.height)
-
-        background.x--
-        if (background.x < -background.w) background.x = 0 */
-
-        paintingsArray.forEach(painting => {
-            painting.y += 0.2;
-            painting.render();
-        })
-
-        //it's not GameOver - render the game
-
-        if(!myGameArea.isGameOver) {
-            myGameArea.components.forEach(component => {
-                component.render()
-            })
-
-            //Check for collisions
-            paintingsArray.forEach(painting => {
-                
-                if (painting.checkCollision(museum1)) {
-                    score++;
-                    paintingsArray.shift;
-                    console.log(score);
-                    console.log(paintingsArray);
-                }
-
-                else if (painting.checkCollision(museum1) && (painting.type != museum1.type)) {
-                    myGameArea.isGameOver = true
-                    ctx.clearRect(0,0, myGameArea.canvas.width, myGameArea.canvas.height)
-                    document.getElementById("game-over").style.display = "flex"
-
-                }
-
-             /*   if (painting.checkCollision(museum1)) {
-                    alert('collided')  
-                } */
-            })
-        
-        }
-
-         
-    }
-
-};
-
-myGameArea.start();
 
 let background = new Component(0, 0, myGameArea.canvas.width, myGameArea.canvas.height, "pink");
 myGameArea.components.push(background); // maybe use sort function to sort properly (Ex. background in the end)
@@ -87,7 +25,21 @@ let museumArray = [];
 museumArray.push(museum1, museum2, museum3);
 console.log(myGameArea.components)
 
-// painting1.checkCollision(museum1)
+/* let collisionCheckTest = (target1, target2) => {
+    if (
+        target1.x < target2.x + target2.w  &&
+        target1.x + target1.w > target2.x &&
+        target1.y < target2.y + target2.h  &&
+        target1.y + target1.h > target2.y
+    ) {
+        console.log('collided check');
+        paintingsArray.shift();
+        console.log(paintingsArray);
+        alert('Game over');
+    }
+}
+collisionCheckTest(paintingsArray[0], museum1);
+console.log('keep trying') */
 
 setInterval(myGameArea.update, 100 / 60);
 

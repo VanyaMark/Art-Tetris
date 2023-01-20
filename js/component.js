@@ -7,7 +7,6 @@ class Component {
         if (color) this.color = color;
       }
       
-    
       render() {
     
         const ctx = myGameArea.context;
@@ -25,16 +24,19 @@ class Component {
 
       checkCollision(otherComponent) {
         if (
-            this.x < otherComponent.x + otherComponent.w &&
-            this.x + this.w > otherComponent.x &&
-            this.y < otherComponent.y + otherComponent.h &&
-            this.y + this.h > otherComponent.y
+          this.x < otherComponent.x + otherComponent.w &&
+          this.x + this.w > otherComponent.x &&
+          this.y < otherComponent.y + otherComponent.h &&
+          this.y + this.h > otherComponent.y
         ) {
-            console.log(`collided`)
-            return true
+          console.log('rabotí!!!');
+          paintingsArray.shift();
+          console.log(paintingsArray);
+          alert('Game over')
+          return true
         }
         else {
-            return false
+          return false
         }
       }
 }
