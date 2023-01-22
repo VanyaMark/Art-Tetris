@@ -9,6 +9,7 @@ let score = 0;
 let paintingsList2 = ["./img/r1.png", "./img/r2.png", "./img/r3.png", "./img/r4.png", "./img/r5.png", "./img/r6.png", "./img/r7.png", "./img/r8.png"];
 let paintingsList3 = ["./img/m1.png", "./img/m2.png", "./img/m3.png", "./img/m4.png", "./img/m5.png", "./img/m6.png", "./img/m7.png", "./img/m8.png"]; */
 
+//--------- CREATE 3 ARRAYS TO CORRESPOND TO "BAROQUE", "ROMANTICISM" AND "MODERN ART" | HOLD PAINTINGS' IMAGES' LOCATIONS -------------
 let paintingsList1 = [
     "green",
     "lightgreen",
@@ -27,42 +28,56 @@ let paintingsList3 = [
     "brown",
     "gray"
 ]
+//----------- FUNCTION TO GET RANDOM X FOR THE PAINTINGS BETWEEN 0 AND (myGameArea.canvas.width - Painting.w), IN THIS CASE = 370 ----
 
+/* const xRandom = () => {
+    return Math.floor(Math.random() * 370);
+  } NOT WORKING!!!!! */
+
+let xRandom = 0;
+function getRandomX() {
+    xRandom = Math.floor(Math.random() * 370);
+    return xRandom;
+}
+
+
+//-------- VARIABLE TO ADD RANDOMNESS IN ARRAYS EXECUTION WITHIN setInterval() function -------------------
 let currentPaintingList = 0;
 
 setInterval(() => {
     console.log(currentPaintingList);
 
     currentPaintingList = currentPaintingList % 2;
-    currentPaintingList++
+    currentPaintingList++ // each time executing random number between 0 and 2
+
     console.log(currentPaintingList);
+
+    getRandomX();
 
     if (currentPaintingList == 0) {
         let currentImage = paintingsList1.shift();
-        let painting = new Painting(0, -50, 80, 80, currentImage, "baroque");
+        let painting = new Painting(xRandom, -80, 80, 80, currentImage, "baroque");
+        console.log(`xRandom List 1: ${xRandom}`)
         paintingsArray.push(painting);
     }
     else if (currentPaintingList == 1) {
         let currentImage = paintingsList2.shift();
-        let painting = new Painting(0, -50, 80, 80, currentImage, "romanticism");
+        let painting = new Painting(xRandom, -80, 80, 80, currentImage, "romanticism");
+        console.log(`xRandom List 1: ${xRandom}`)
         paintingsArray.push(painting);
     }
     else if (currentPaintingList == 2) {
         let currentImage = paintingsList3.shift();
-        let painting = new Painting(0, -50, 80, 80, currentImage, "modernArt");
+        let painting = new Painting(xRandom, -80, 80, 80, currentImage, "modernArt");
+        console.log(`xRandom List 1: ${xRandom}`)
         paintingsArray.push(painting);
     }
 
-}, 2500)
+}, 2300);
 
 
-/* let painting1 = new Painting(0, 0, 80, 80, "green", "baroque");
-let painting2 = new Painting(100, 0, 80, 80, "#90ee90", "romanticism");
-let painting3 = new Painting(180, 0, 80, 80, "#faf0e6", "modernArt");
-let painting4 = new Painting(270, 0, 80, 80, "#ff4500", "baroque"); */
 
-
-paintingsArray.push(new Painting(0, 0, 80, 80, "red", "baroque"));
+paintingsArray.push(new Painting(10, 0, 80, 80, "red", "baroque"));
 console.log(paintingsArray);
 
 let museum1 = new Museum(0, (myGameArea.canvas.height - 150), 150, 150, "./img/museum1.png", "baroque");

@@ -28,7 +28,7 @@ const myGameArea = {
 
             if (paintingsArray[0].checkCollision(museum1) && paintingsArray[0].type == museum1.type) {
                 score++;
-                console.log(score);
+                console.log(`score: ${score}`);
                 console.log(paintingsArray[0].type)
                 console.log(museum1.type)
                 paintingsArray.shift();
@@ -40,7 +40,7 @@ const myGameArea = {
 
             if (paintingsArray[0].checkCollision(museum2) && paintingsArray[0].type == museum2.type) {
                 score++;
-                console.log(score);
+                console.log(`score: ${score}`);
                 console.log(paintingsArray[0].type)
                 console.log(museum2.type)
                 paintingsArray.shift();
@@ -52,7 +52,7 @@ const myGameArea = {
 
             if (paintingsArray[0].checkCollision(museum3) && paintingsArray[0].type == museum3.type) {
                 score++;
-                console.log(score);
+                console.log(`score: ${score}`);
                 console.log(paintingsArray[0].type)
                 console.log(museum3.type)
                 paintingsArray.shift();
