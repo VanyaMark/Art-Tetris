@@ -29,25 +29,80 @@ const myGameArea = {
             if (paintingsArray[0].checkCollision(museum1) && paintingsArray[0].type == museum1.type) {
                 score++;
                 console.log(`score: ${score}`);
-                console.log(paintingsArray[0].type)
-                console.log(museum1.type)
+                console.log(paintingsArray[0].type);
+                console.log(museum1.type);
                 paintingsArray.shift();
-                console.log(paintingsArray); //works but stays on top of the museum, has to fall inside
+                console.log(`Paintings Array at this point: ${paintingsArray}`);
             }
             else if (paintingsArray[0].checkCollision(museum1) && paintingsArray[0].type != museum1.type) {
-                alert('game over');
+                if (score <= 8) {
+                    console.log(`score: ${score}`);
+                    console.log(`Keep practicing! You've got a long way to go!`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum1.type);
+                    alert('game over');
+                }
+                else if (score <= 16) {
+                    console.log(`score: ${score}`);
+                    console.log(`You're doing fine, but don't stop practicing!`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum1.type);
+                    alert('game over');
+                }
+                else if (score <= 24) {
+                    console.log(`score: ${score}`);
+                    console.log(`Good job! You are almost there`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum1.type);
+                    alert('game over');
+                }
+                else if (score > 30) {
+                    console.log(`score: ${score}`);
+                    console.log(`Awesome! You are officially an art expert!`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum1.type);
+                    alert('game over');
+                }
+                
             }
 
             if (paintingsArray[0].checkCollision(museum2) && paintingsArray[0].type == museum2.type) {
                 score++;
                 console.log(`score: ${score}`);
-                console.log(paintingsArray[0].type)
-                console.log(museum2.type)
+                console.log(paintingsArray[0].type);
+                console.log(museum2.type);
                 paintingsArray.shift();
-                console.log(paintingsArray); //works but stays on top of the museum, has to fall inside
+                console.log(`Paintings Array at this point: ${paintingsArray}`); 
             }
             else if (paintingsArray[0].checkCollision(museum2) && paintingsArray[0].type != museum2.type) {
-                alert('game over');
+                if (score <= 8) {
+                    console.log(`score: ${score}`);
+                    console.log(`Keep practicing! You've got a long way to go!`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum2.type);
+                    alert('game over');
+                }
+                else if (score <= 16) {
+                    console.log(`score: ${score}`);
+                    console.log(`You're doing fine, but don't stop practicing!`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum2.type);
+                    alert('game over');
+                }
+                else if (score <= 24) {
+                    console.log(`score: ${score}`);
+                    console.log(`Good job! You are almost there`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum2.type);
+                    alert('game over');
+                }
+                else if (score > 30) {
+                    console.log(`score: ${score}`);
+                    console.log(`Awesome! You are officially an art expert!`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum2.type);
+                    alert('game over');
+                }
             }
 
             if (paintingsArray[0].checkCollision(museum3) && paintingsArray[0].type == museum3.type) {
@@ -56,10 +111,37 @@ const myGameArea = {
                 console.log(paintingsArray[0].type)
                 console.log(museum3.type)
                 paintingsArray.shift();
-                console.log(paintingsArray); //works but stays on top of the museum, has to fall inside
+                console.log(`Paintings Array at this point: ${paintingsArray}`); 
             }
             else if (paintingsArray[0].checkCollision(museum3) && paintingsArray[0].type != museum3.type) {
-                alert('game over');
+                if (score <= 8) {
+                    console.log(`score: ${score}`);
+                    console.log(`Keep practicing! You've got a long way to go!`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum3.type);
+                    alert('game over');
+                }
+                else if (score <= 16) {
+                    console.log(`score: ${score}`);
+                    console.log(`You're doing fine, but don't stop practicing!`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum3.type);
+                    alert('game over');
+                }
+                else if (score <= 24) {
+                    console.log(`score: ${score}`);
+                    console.log(`Good job! You are almost there`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum3.type);
+                    alert('game over');
+                }
+                else if (score > 30) {
+                    console.log(`score: ${score}`);
+                    console.log(`Awesome! You are officially an art expert!`);
+                    console.log(paintingsArray[0].type);
+                    console.log(museum3.type);
+                    alert('game over');
+                }
             }
         }
 
@@ -67,6 +149,12 @@ const myGameArea = {
             painting.y += 0.2;
             painting.render();
         })
+
+        paintingsArray[0].checkCollisionToWalls();
+
+        if (score >= 15) {
+            paintingsArray[0].fasterSpeed();
+        }
          
     }
 

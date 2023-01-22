@@ -38,17 +38,17 @@ document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "Left": // IE/Edge specific value
     case "ArrowLeft":
-      paintingsArray[0].moveLeft(); // Do something for "left arrow" key press.
+      paintingsArray[0].moveLeft(); // Moving left for "left arrow" key press.
       break;
     case "Right": // IE/Edge specific value
     case "ArrowRight":
-      paintingsArray[0].moveRight(); // Do something for "right arrow" key press.
+      paintingsArray[0].moveRight(); // Moving right for "right arrow" key press.
       break;
     case "ArrowDown":
-      paintingsArray[0].moveDown(); // Do something for "down arrow" key press.
+      paintingsArray[0].moveDown(); // Moving down manually for "down arrow" key press.
       break;
     case "Enter":
-      // Do something for "enter" or "return" key press.
+      paintingsArray[0].enterDrop(); // Drop the painting faster for Enter key press.
       break;
     case "Esc": // IE/Edge specific value
     case "Escape":
