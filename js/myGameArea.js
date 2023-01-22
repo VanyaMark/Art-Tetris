@@ -3,8 +3,8 @@ const myGameArea = {
     components: [],
     isGameOver: false,
     start: function () {
-        this.canvas.width = 750;
-        this.canvas.height = 1200;
+        this.canvas.width = 450;
+        this.canvas.height = 600;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     },
@@ -19,11 +19,6 @@ const myGameArea = {
         background.x--
         if (background.x < -background.w) background.x = 0 */
 
-        paintingsArray.forEach(painting => {
-            painting.y += 0.2;
-            painting.render();
-        })
-
         //it's not GameOver - render the game
 
         if(!myGameArea.isGameOver) {
@@ -31,32 +26,47 @@ const myGameArea = {
                 component.render()
             })
 
-            paintingsArray[0].checkCollision(museum1);
+            if (paintingsArray[0].checkCollision(museum1) && paintingsArray[0].type == museum1.type) {
+                score++;
+                console.log(score);
+                console.log(paintingsArray[0].type)
+                console.log(museum1.type)
+                paintingsArray.shift();
+                console.log(paintingsArray); //works but stays on top of the museum, has to fall inside
+            }
+            else if (paintingsArray[0].checkCollision(museum1) && paintingsArray[0].type != museum1.type) {
+                alert('game over');
+            }
 
-            //Check for collisions
-            /* paintingsArray.forEach(painting => {
-                
-                if (painting.checkCollision(museum1)) {
-                    score++;
-                    paintingsArray.shift;
-                    console.log(score);
-                    console.log(paintingsArray);
-                }
+            if (paintingsArray[0].checkCollision(museum2) && paintingsArray[0].type == museum2.type) {
+                score++;
+                console.log(score);
+                console.log(paintingsArray[0].type)
+                console.log(museum2.type)
+                paintingsArray.shift();
+                console.log(paintingsArray); //works but stays on top of the museum, has to fall inside
+            }
+            else if (paintingsArray[0].checkCollision(museum2) && paintingsArray[0].type != museum2.type) {
+                alert('game over');
+            }
 
-                else if (painting.checkCollision(museum1) && (painting.type != museum1.type)) {
-                    myGameArea.isGameOver = true
-                    ctx.clearRect(0,0, myGameArea.canvas.width, myGameArea.canvas.height)
-                    document.getElementById("game-over").style.display = "flex"
-
-                } */
-
-             /*   if (painting.checkCollision(museum1)) {
-                    alert('collided')  
-                } 
-            })*/
-        
+            if (paintingsArray[0].checkCollision(museum3) && paintingsArray[0].type == museum3.type) {
+                score++;
+                console.log(score);
+                console.log(paintingsArray[0].type)
+                console.log(museum3.type)
+                paintingsArray.shift();
+                console.log(paintingsArray); //works but stays on top of the museum, has to fall inside
+            }
+            else if (paintingsArray[0].checkCollision(museum3) && paintingsArray[0].type != museum3.type) {
+                alert('game over');
+            }
         }
 
+        paintingsArray.forEach(painting => {
+            painting.y += 0.2;
+            painting.render();
+        })
          
     }
 

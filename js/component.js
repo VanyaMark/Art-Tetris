@@ -12,13 +12,13 @@ class Component {
         const ctx = myGameArea.context;
     
         if (this.img) 
-        {
+        { 
           ctx.drawImage(this.img, this.x, this.y, this.w, this.x)
         }
         else if (this.color)
         {
           ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.w, this.h);
+          ctx.fillRect(this.x, this.y, this.w, this.h);
       }
       }
 
@@ -29,10 +29,6 @@ class Component {
           this.y < otherComponent.y + otherComponent.h &&
           this.y + this.h > otherComponent.y
         ) {
-          console.log('rabotí!!!');
-          paintingsArray.shift();
-          console.log(paintingsArray);
-          alert('Game over')
           return true
         }
         else {
