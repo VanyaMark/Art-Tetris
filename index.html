@@ -4,45 +4,67 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- link NUNITO FONT FAMILY-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Art Tetris</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-   
     <div id="main-menu">
-      <h1>ART TETRIS</h1>
-    </div>
-    <div class="story">
-      <img src="" alt="Evil Thief" />
-      <span>
-        An evil thief has been stealing paintings from all over the
-        world.</span>
-    </div>
-    <div class="story"></div>
-    <img src="" alt="Handcuffed thief" />
-      <span>
-        Luckily, after many months of arduous investigation he was finally caught by FBI.</span>
-    <div class="story">
-        <img src="" alt="Treasure" />
-      <span>
-        They found his secret hideout and all of his treasures.</span>
-    </div>
-    <div class="story">
-        <img src="" alt="Museum" />
-      <span>
-        Now, it's your turn to help the desperate museum managers recover their precious paintings!</span>
-    </div>
-    <div id="instructions">
-        <span>Use left and right arrow to move the paintings, use arrow down to move faster.</span>
-        <button id="play"> Play! </button>
+      <div id="title">
+        <h1>ART TETRIS</h1>
+      </div>
+      <div>
+        <div class="story">
+          <img src="./img/thief.png" alt="Evil Thief" />
+
+          <p>
+            An evil thief has been stealing paintings from all over the world.
+          </p>
+        </div>
+        <div class="story">
+          <p>
+            Luckily, after many months of arduous investigation he was finally
+            caught by the FBI.
+          </p>
+          <img src="./img/handcuffs.png" alt="Handcuffed thief" />
+        </div>
+        <div class="story">
+          <p>They found his secret hideout. His treasures included money, jewels and, of course, many precious paintings.</p>
+          <img src="./img/treasure.png" alt="Treasure" />
+          <p>There were soo many paintings that it was impossible to sort them out!</p>
+        </div>
+        <div class="story">
+          <p>
+            Now it's your turn to help FBI order them by art periods and return them to the desperate museum managers all over the world!
+      </p>
+          <img src="./img/museum-fs.png" alt="Museum" />
+        </div>
+      </div>
+      <div id="instructions">
+        <p
+          >Use left and right arrow to move the paintings, use arrow down to
+          move faster.</p
+        >
+        <button id="play">PLAY!</button>
+      </div>
     </div>
 
     <div id="game-over">
-      <h1>
-        Game Over
-    </h1>
+      <h1>Game Over</h1>
+      <div id="result">
+      </div>
+      <div id="did-you-know">
+        <h2>Did you know...</h2>
+        <p></p>
+      </div>
 
-    <button id="restart-game-over"> Play Again </button>
+      <button id="restart-game-over">Play Again</button>
     </div>
 
     <script src="js/myGameArea.js"></script>
@@ -50,8 +72,8 @@
     <script src="js/painting.js"></script>
     <script src="js/museum.js"></script>
     <script src="js/index.js"></script>
-    
+
     <!-- <script src="js/controllers.js"></script> -->
-    <script src="js/DOM.js"></script> 
+    <script src="js/DOM.js"></script>
   </body>
 </html>

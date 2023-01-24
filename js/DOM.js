@@ -1,13 +1,8 @@
 document.getElementById("play").addEventListener("click", (event) => {
   // Create the Background
-  background = new Component(
-    0,
-    0,
-    myGameArea.canvas.width,
-    myGameArea.canvas.height
-  );
+  background = new Component(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
   background.img = new Image();
-  background.img.src = "../img/Background.png";
+  background.img.src = "./img/background.png";
 
   // Create Paintings
 
@@ -25,11 +20,15 @@ document.getElementById("play").addEventListener("click", (event) => {
   document.getElementById("main-menu").style.display = "none";
 });
 
-document
-  .getElementById("restart-game-over")
-  .addEventListener("click", (event) => {
-    restart();
+document.getElementById("restart-game-over").addEventListener("click", (event) => {
+  background = new Component(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
+  background.img = new Image();
+  background.img.src = "./img/background.png";
     myGameArea.isGameOver = false;
+
+    updateTimer = setInterval(myGameArea.update, 1000 / 60);
+
+  document.getElementById("main-menu").style.display = "none";
     document.getElementById("game-over").style.display = "none";
   });
 

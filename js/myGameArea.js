@@ -10,14 +10,14 @@ const myGameArea = {
     },
     update: function() {
 
-       /* const ctx = myGameArea.context
+       const ctx = myGameArea.context
 
         // render the background
         ctx.drawImage(background.img, background.x, background.y, myGameArea.canvas.width, myGameArea.canvas.height)
         ctx.drawImage(background.img, background.x + background.w , background.y, myGameArea.canvas.width, myGameArea.canvas.height)
 
         background.x--
-        if (background.x < -background.w) background.x = 0 */
+        if (background.x < -background.w) background.x = 0
 
         //it's not GameOver - render the game
 
@@ -36,6 +36,10 @@ const myGameArea = {
             }
             else if (paintingsArray[0].checkCollision(museum1) && paintingsArray[0].type != museum1.type) {
                 if (score <= 8) {
+                    myGameArea.isGameOver = true;
+                    ctx.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
+                    document.getElementById("game-over").style.display = "flex";
+
                     console.log(`score: ${score}`);
                     console.log(`Keep practicing! You've got a long way to go!`);
                     console.log(paintingsArray[0].type);
@@ -76,6 +80,10 @@ const myGameArea = {
             }
             else if (paintingsArray[0].checkCollision(museum2) && paintingsArray[0].type != museum2.type) {
                 if (score <= 8) {
+                    myGameArea.isGameOver = true;
+                    ctx.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
+                    document.getElementById("game-over").style.display = "flex";
+
                     console.log(`score: ${score}`);
                     console.log(`Keep practicing! You've got a long way to go!`);
                     console.log(paintingsArray[0].type);
@@ -115,6 +123,10 @@ const myGameArea = {
             }
             else if (paintingsArray[0].checkCollision(museum3) && paintingsArray[0].type != museum3.type) {
                 if (score <= 8) {
+                    myGameArea.isGameOver = true;
+                    ctx.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
+                    document.getElementById("game-over").style.display = "flex";
+
                     console.log(`score: ${score}`);
                     console.log(`Keep practicing! You've got a long way to go!`);
                     console.log(paintingsArray[0].type);

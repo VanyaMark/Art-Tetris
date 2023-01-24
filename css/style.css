@@ -1,33 +1,135 @@
-body{
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    max-width: 600px;
-    max-height: 750px;
+*{
+    box-sizing: border-box;
 }
 
-#main-menu,
-#game-over{
+body {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 
-    position: absolute;
-    width: 600px;
+background: linear-gradient(#3f87a6, #ebf8e1, #F5CEB0);
+
+}
+
+#title {
+    padding: 50px;
+    background-color: #2C5D73;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+  }
+
+#main-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+#main-menu div:nth-child(2) {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    top: 20%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.story {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #F5CAAE;
+    max-width: 500px;
+    border-radius: 10%;
+}
+#main-menu div:nth-child(2) div:first-child {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#main-menu div:nth-child(2) div:first-child img {
+    padding: 5%;
+    width: auto;
+    height: 100%;
+}
+
+#main-menu div:nth-child(2) div:first-child p {
+    padding: 10% 5% 0 0;
+    text-align: right;
+}
+
+#main-menu div:nth-child(2) div:nth-child(2) img {
+    padding: 0%;
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 10% 10%;
+}
+
+#main-menu div:nth-child(2) div:nth-child(2) p {
+    padding: 10% 5% 0 5%;
     text-align: center;
-    padding-left: 50px;
-    padding-right: 50px;
-     
+}
+
+#main-menu div:nth-child(2) div:nth-child(3) img {
+    padding: 0%;
+    width: 100%;
+    height: auto;
+}
+
+#main-menu div:nth-child(2) div:nth-child(3) p:nth-child(1) {
+    padding: 0 5%;
+    text-align: center;
+}
+
+#main-menu div:nth-child(2) div:nth-child(3) p:nth-child(3) {
+    padding: 0% 5% 0 5%;
+    text-align: center;
+}
+
+#main-menu div:nth-child(2) div:nth-child(4) p {
+    padding: 0% 5%;
+    text-align: center;
+}
+
+#main-menu div:nth-child(2) div:nth-child(4) img {
+    padding: 0%;
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 10% 10%;
+}
+
+#instructions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 0 5%;
+    background-color: #7BA3B5;
+    border-radius: 15px;
+}
+
+#instructions p {
+    text-align: center;
+}
+
+#play, #restart-game-over {
+    height: 5.5vh;
+    margin: 0px 20px 20px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    background-color: #F4E6E2;
 }
 
 #game-over {
     display: none;
-}
-
-#restart{
-    position: absolute;
-    bottom: -50px;
-    left: 40%;
-    transform: translateX(-50%);
 }
