@@ -29,7 +29,7 @@ h1 {
     text-transform: uppercase;
   }
 
-#main-menu {
+#main-menu, #game-over {
     display: flex;
     flex-direction: column;
 }
@@ -133,4 +133,9 @@ h1 {
 #game-over {
     display: none;
 }
+
+#canvas {
+    display: none;
+}
+
 

@@ -1,7 +1,7 @@
 let paintingsArray = [];
+let updateTimer;
 
-let background = new Component(0, 0, myGameArea.canvas.width, myGameArea.canvas.height, "#F2DCE8");
-myGameArea.components.push(background); 
+let background;
 
 let score = 0;
 // -----------LINKING IMAGES NOT WORKING !!!!!!!!! -----------------------------------------------
@@ -111,9 +111,9 @@ setInterval(() => {
 
 
 let restart = () => {
-    ctx.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height)
-    myGameArea.start();
-    myGameArea.update();
+    paintingsArray = [];
+    clearInterval(updateTimer);
+    console.log(restart);
 }
 
 console.log(paintingsArray);

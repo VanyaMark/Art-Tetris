@@ -1,35 +1,21 @@
 document.getElementById("play").addEventListener("click", (event) => {
-  // Create the Background
+  // Create the Background  
   background = new Component(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
   background.img = new Image();
   background.img.src = "./img/background.png";
-  // Create Paintings
 
-  /* let painting1 = new Painting(0, 0, 80, 80, "green", "baroque");
-  let painting2 = new Painting(100, 0, 80, 80, "#90ee90", "romanticism");
-  let painting3 = new Painting(180, 0, 80, 80, "#faf0e6", "modernArt");
-  let painting4 = new Painting(270, 0, 80, 80, "#ff4500", "baroque");
-  myGameArea.components.push(painting1, painting2, painting3, painting4);
-  let paintingsArray = [];
-  paintingsArray.push(painting1, painting2, painting3, painting4);
-  console.log(paintingsArray); */
-
+  
   updateTimer = setInterval(myGameArea.update, 1000 / 60);
 
   document.getElementById("main-menu").style.display = "none";
+  
 });
 
 document.getElementById("restart-game-over").addEventListener("click", (event) => {
-/*  background = new Component(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
-  background.img = new Image();
-  background.img.src = "./img/background.png"; 
-    myGameArea.isGameOver = false;
     restart();
-
-    updateTimer = setInterval(myGameArea.update, 1000 / 60); */
-
-  document.getElementById("main-menu").style.display = "none";
-  document.getElementById("game-over").style.display = "none";
+    myGameArea.isGameOver = false;
+    updateTimer = setInterval(myGameArea.update, 1000 / 60);
+    document.getElementById("game-over").style.display = "none";
   });
 
 document.addEventListener("keydown", (event) => {
