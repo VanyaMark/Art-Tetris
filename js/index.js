@@ -110,9 +110,12 @@ setInterval(() => {
 }, 2300);
 
 
+let restart = () => {
+    ctx.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height)
+    myGameArea.start();
+    myGameArea.update();
+}
 
-
-paintingsArray.push(new Painting(10, 0, 80, 80, "rgb(0, 180, 0)", "baroque"));
 console.log(paintingsArray);
 
 let museum1 = new Museum(0, (myGameArea.canvas.height - 150), 150, 150, "./img/museum1.png", "baroque");
@@ -128,6 +131,8 @@ console.log(myGameArea.components)
 
 
 setInterval(myGameArea.update, 100 / 60);
+
+
 
 
 

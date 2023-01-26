@@ -3,7 +3,6 @@ document.getElementById("play").addEventListener("click", (event) => {
   background = new Component(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
   background.img = new Image();
   background.img.src = "./img/background.png";
-
   // Create Paintings
 
   /* let painting1 = new Painting(0, 0, 80, 80, "green", "baroque");
@@ -21,15 +20,16 @@ document.getElementById("play").addEventListener("click", (event) => {
 });
 
 document.getElementById("restart-game-over").addEventListener("click", (event) => {
-  background = new Component(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
+/*  background = new Component(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
   background.img = new Image();
-  background.img.src = "./img/background.png";
+  background.img.src = "./img/background.png"; 
     myGameArea.isGameOver = false;
+    restart();
 
-    updateTimer = setInterval(myGameArea.update, 1000 / 60);
+    updateTimer = setInterval(myGameArea.update, 1000 / 60); */
 
   document.getElementById("main-menu").style.display = "none";
-    document.getElementById("game-over").style.display = "none";
+  document.getElementById("game-over").style.display = "none";
   });
 
 document.addEventListener("keydown", (event) => {
