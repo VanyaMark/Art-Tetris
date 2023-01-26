@@ -1,12 +1,12 @@
 class Painting extends Component{
-    constructor (x, y, w, h, color, /*image,*/ type) {
-      super(x, y, w, h, color)
+    constructor (x, y, w, h, image, type) {
+      super(x, y, w, h)
       this.type = type;
       this.ySpeed = 1;
       this.gravity = 0.1;
-      /* let img = new Image();
+      let img = new Image();
       img.src = image;
-      this.img = img; */
+      this.img = img;
       
     }
     moveLeft() {
