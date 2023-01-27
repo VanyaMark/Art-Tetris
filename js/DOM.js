@@ -1,19 +1,26 @@
 document.getElementById("play").addEventListener("click", (event) => {
+  
+  myGameArea.start();
+  
   // Create the Background  
   background = new Component(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
   background.img = new Image();
   background.img.src = "./img/background.png";
-
-  
-  updateTimer = setInterval(myGameArea.update, 1000 / 60);
+  myGameArea.canvas.style.display = "flex"; 
+  // myGameArea.canvas.style.alignContent = "center";
 
   document.getElementById("main-menu").style.display = "none";
+
+  setInterval(generatePaintings, 2300);
+  setInterval(myGameArea.update, 100 / 60);
+
   
 });
 
 document.getElementById("restart-game-over").addEventListener("click", (event) => {
     restart();
     myGameArea.isGameOver = false;
+    myGameArea.canvas.style.display = "flex"; 
     updateTimer = setInterval(myGameArea.update, 1000 / 60);
     document.getElementById("game-over").style.display = "none";
   });

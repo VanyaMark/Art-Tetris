@@ -3,10 +3,12 @@ const myGameArea = {
     components: [],
     isGameOver: false,
     start: function () {
-        this.canvas.width = 450;
-        this.canvas.height = 600;
+        this.canvas.width = 780;
+        this.canvas.height = 800;
         this.context = this.canvas.getContext("2d");
+        this.canvas.setAttribute("id", "canvas");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+
     },
     update: function() {
 
@@ -20,12 +22,13 @@ const myGameArea = {
         if (background.x < -background.w) background.x = 0
 
         //it's not GameOver - render the game
+        // GameOver conditon - Collision with the museum of the same type
 
         if(!myGameArea.isGameOver) {
             myGameArea.components.forEach(component => {
                 component.render()
             })
-
+            if (paintingsArray.length > 0) {
             if (paintingsArray[0].checkCollision(museum1) && paintingsArray[0].type == museum1.type) {
                 score++;
                 console.log(`score: ${score}`);
@@ -61,10 +64,13 @@ const myGameArea = {
             else if (paintingsArray[0].checkCollision(museum3) && paintingsArray[0].type != museum3.type) {
                 myGameArea.isGameOver = true;
             }
+        }
+        // If condition to show 4 different messages according to your score range
             if (myGameArea.isGameOver == true) {
+                myGameArea.canvas.style.display = "none";
+                ctx.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
+                document.getElementById("game-over").style.display = "flex";
                 if (score <= 8) {
-                    ctx.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
-                    document.getElementById("game-over").style.display = "flex";
                     let result = document.getElementById("result");
                     result.innerHTML = `Your score is ${score}. Keep practicing! You've got a long way to go!`
 
@@ -74,8 +80,6 @@ const myGameArea = {
                     console.log(museum3.type);
                 }
                 else if (score <= 16) {
-                    ctx.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
-                    document.getElementById("game-over").style.display = "flex";
                     let result = document.getElementById("result");
                     result.innerHTML = `Your score is ${score}. You are doing fine, but don't stop practicing!`
 
@@ -85,8 +89,6 @@ const myGameArea = {
                     console.log(museum3.type);
                 }
                 else if (score <= 24) {
-                    ctx.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
-                    document.getElementById("game-over").style.display = "flex";
                     let result = document.getElementById("result");
                     result.innerHTML = `Your score is ${score}. Good job! You are almost there!`
 
@@ -96,8 +98,6 @@ const myGameArea = {
                     console.log(museum3.type);
                 }
                 else if (score > 30) {
-                    ctx.clearRect(0, 0, myGameArea.canvas.width, myGameArea.canvas.height);
-                    document.getElementById("game-over").style.display = "flex";
                     document.getElementById("result")
                     let result = document.getElementById("result");
                     result.innerHTML = `Your score is ${score}. Awesome! You are officially an art expert!`
@@ -112,7 +112,7 @@ const myGameArea = {
         }
 
         paintingsArray.forEach(painting => {
-            painting.y += 0.2;
+            painting.y += 0.27;
             painting.render();
         })
 

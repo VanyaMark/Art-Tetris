@@ -15,7 +15,6 @@ background: linear-gradient(#3f87a6, #ebf8e1, #F5CEB0);
 }
 
 #title {
-    padding: 50px;
     background-color: #2C5D73;
     text-align: center;
 }
@@ -27,6 +26,8 @@ h1 {
     text-align: center;
     letter-spacing: 0.8rem;
     text-transform: uppercase;
+    text-align: center;
+    padding: 5%;
   }
 
 #main-menu, #game-over {
@@ -132,10 +133,17 @@ h1 {
 
 #game-over {
     display: none;
+    z-index: 3;
+    justify-content: center;
+    align-content: center;
 }
 
 #canvas {
     display: none;
+    justify-content: center;
 }
 
+#result {
+    padding: 5%;
+}
 

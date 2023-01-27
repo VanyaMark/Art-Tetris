@@ -13,7 +13,7 @@ class Component {
     
         if (this.img) 
         { 
-          ctx.drawImage(this.img, this.x, this.y, this.w, this.x)
+          ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
         }
         else if (this.color)
         {

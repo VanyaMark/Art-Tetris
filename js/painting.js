@@ -10,16 +10,16 @@ class Painting extends Component{
       
     }
     moveLeft() {
-      this.x -= 10;
+      this.x -= 20;
     }
     moveRight() {
-      this.x += 10;
+      this.x += 20;
     }
    /* moveUp() {
       this.y -= 10;
     } */
     moveDown() {
-        this.y += 30; 
+        this.y += 60; 
         // !!! Wanna add Gravity here
       //this.ySpeed = this.ySpeed - this.gravity;
       //player.y -= player.ySpeed
@@ -45,7 +45,7 @@ class Painting extends Component{
 // ------- FAILED TO ADD GRAVITY HERE / ASK DIOGO -----------
    /* this.ySpeed = this.ySpeed - this.gravity
     this.y -= this.ySpeed; */ 
-    this.y += 200;
+    this.y += 400;
     console.log("Painting dropped with Enter button")
    }
   }
