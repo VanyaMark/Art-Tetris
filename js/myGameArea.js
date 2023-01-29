@@ -97,7 +97,7 @@ const myGameArea = {
                     console.log(paintingsArray[0].type);
                     console.log(museum3.type);
                 }
-                else if (score > 30) {
+                else if (score > 24) {
                     document.getElementById("result")
                     let result = document.getElementById("result");
                     result.innerHTML = `Your score is ${score}. Awesome! You are officially an art expert!`
