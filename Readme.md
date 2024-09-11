@@ -1,6 +1,8 @@
 # ART TETRIS
 ## _Project developed for Ironhack Web Development Bootcamp_
 
+ART TETRIS live: https://vanyamark.github.io/Art-Tetris/
+
 ![N|Solid](https://i.imgur.com/1QgrNNw.png)
 
 Art Tetris is an educational art game aimed at art students and art lovers. 
